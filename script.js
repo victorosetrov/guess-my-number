@@ -1,3 +1,5 @@
+//Excercices
+
 let markWeight = 78;
 let markHeight = 1.69;
 let johnWeight = 92;
@@ -36,6 +38,8 @@ if (markHigherBMI) {
     console.log(`John has higher BMI because he has ${johnBMI} in comparision with Mark because he has ${markBMI}`)
 };
 
+// checking backticks
+
 const name = 'Victor';
 const dateBirth = 1988;
 const job = 'analyst';
@@ -46,6 +50,8 @@ console.log(results);
 
 const resultsNew = `I'm ${name} and I'm ${currentYear - dateBirth} and I'm an ${job}`;
 console.log(resultsNew);
+
+// checking if/else statement
 
 const age = 17;
 const leftAge = 18 - age
