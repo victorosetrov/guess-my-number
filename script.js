@@ -1,3 +1,5 @@
+'use strict';
+
 // //Excercices
 
 // let markWeight = 78;
@@ -226,29 +228,63 @@
 //     console.log('Koalas has higher average in comparison with Dolphin')
 // }s
 
-const ageYou = 16;
-const drink = ageYou >= 18 ? 'I wanna wine' : 'I wanna water';
-console.log(drink)
+// const ageYou = 16;
+// const drink = ageYou >= 18 ? 'I wanna wine' : 'I wanna water';
+// console.log(drink)
 
-let drink2;
-if (ageYou >= 18) {
-    drink2 = 'wine'
-} else {
-    drink2 = 'water'
+// let drink2;
+// if (ageYou >= 18) {
+//     drink2 = 'wine'
+// } else {
+//     drink2 = 'water'
+// }
+// console.log(drink2)
+// console.log(`I like to have a drink ${ageYou >= 18 ? drink2 = 'wine' : drink2 = 'water'}} `)
+
+
+// const bill1 = 275;
+// const bill2 = 40;
+// const bill3 = 430;
+
+// const tip1 = bill1 <= 300 && bill1 >= 50 ? bill1 * 0.15 : bill1 * 0.20 
+// console.log(`Therefore you should pay ${tip1} and ${bill1} from bill and all together is ${tip1 + bill1}`);
+
+// const tip2 = bill2 <= 300 && bill2 >= 50 ? bill2 * 0.15 : bill2 * 0.20 
+// console.log(`Therefore you should pay ${tip2} and ${bill2} from bill and all together is ${tip2 + bill2}`);
+
+// const tip3 = bill3 <= 300 && bill3 >= 50 ? bill3 * 0.15 : bill3 * 0.20 
+// console.log(`Therefore you should pay ${tip3} and ${bill3} from bill and all together is ${tip3 + bill3}`);
+
+function fruitMachine(apples, oranges) {
+    const juice = `I have ${apples} apples and ${oranges} oranges`;
+    return juice;
+};
+
+const appleJuice = fruitMachine(5, 7);
+console.log(appleJuice);
+
+const appleOrangeJuice = fruitMachine(2, 4);
+console.log(appleOrangeJuice);
+
+function calcYear1(birthYear) {
+    return 2037 - birthYear
 }
-console.log(drink2)
-console.log(`I like to have a drink ${ageYou >= 18 ? drink2 = 'wine' : drink2 = 'water'}} `)
+const outPut1 = calcYear1(1988);
 
+const calcYear2 = function(birthYear) {
+    return 2056 - birthYear
+}
+const outPut2 = calcYear2(1995);
 
-const bill1 = 275;
-const bill2 = 40;
-const bill3 = 430;
+const calcYear3 = birthYear => 2097 - birthYear;
+const outPut3 = calcYear3(2011);
+console.log(outPut1, outPut2, outPut3);
 
-const tip1 = bill1 <= 300 && bill1 >= 50 ? bill1 * 0.15 : bill1 * 0.20 
-console.log(`Therefore you should pay ${tip1} and ${bill1} from bill and all together is ${tip1 + bill1}`);
+const yearUntillRetirement = (dateBorn, firstName) => {
+    const age = 2086 - dateBorn;
+    const ready = 65 - age;
+    return `${firstName} is ${age} years before retirement`
+}
 
-const tip2 = bill2 <= 300 && bill2 >= 50 ? bill2 * 0.15 : bill2 * 0.20 
-console.log(`Therefore you should pay ${tip2} and ${bill2} from bill and all together is ${tip2 + bill2}`);
-
-const tip3 = bill3 <= 300 && bill3 >= 50 ? bill3 * 0.15 : bill3 * 0.20 
-console.log(`Therefore you should pay ${tip3} and ${bill3} from bill and all together is ${tip3 + bill3}`);
+const calcYear4 = yearUntillRetirement(2058, 'Sergio');
+console.log(calcYear4);
