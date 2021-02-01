@@ -330,8 +330,6 @@
 // console.log(fruitProcessor(2,3))
 
 
-
-
 const calcAverage = (a,b,c) => (a + b + c)/3;
 const dolphine1 = calcAverage(44, 23, 71);
 const dolphine2 = calcAverage(85, 54, 41);
@@ -355,3 +353,37 @@ const checkWinner = function(avgDolphine, avgKoalas) {
 
 checkWinner(dolphine1, koalas1);
 checkWinner(dolphine2, koalas2);
+
+function fruitMachine(apples, oranges) {
+    const juice = `I have ${apples} apples and ${oranges} oranges`;
+    return juice;
+};
+
+const appleJuice = fruitMachine(5, 7);
+console.log(appleJuice);
+
+const appleOrangeJuice = fruitMachine(2, 4);
+console.log(appleOrangeJuice);
+
+function calcYear1(birthYear) {
+    return 2037 - birthYear
+}
+const outPut1 = calcYear1(1988);
+
+const calcYear2 = function(birthYear) {
+    return 2056 - birthYear
+}
+const outPut2 = calcYear2(1995);
+
+const calcYear3 = birthYear => 2097 - birthYear;
+const outPut3 = calcYear3(2011);
+console.log(outPut1, outPut2, outPut3);
+
+const yearUntillRetirement = (dateBorn, firstName) => {
+    const age = 2086 - dateBorn;
+    const ready = 65 - age;
+    return `${firstName} is ${age} years before retirement`
+}
+
+const calcYear4 = yearUntillRetirement(2058, 'Sergio');
+console.log(calcYear4);
