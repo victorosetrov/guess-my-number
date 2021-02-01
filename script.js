@@ -255,6 +255,105 @@
 // const tip3 = bill3 <= 300 && bill3 >= 50 ? bill3 * 0.15 : bill3 * 0.20 
 // console.log(`Therefore you should pay ${tip3} and ${bill3} from bill and all together is ${tip3 + bill3}`);
 
+// function fruitMachine(apples, oranges) {
+//     const juice = `I have ${apples} apples and ${oranges} oranges`;
+//     return juice;
+// };
+
+// const appleJuice = fruitMachine(5, 7);
+// console.log(appleJuice);
+
+// const appleOrangeJuice = fruitMachine(2, 4);
+// console.log(appleOrangeJuice);
+
+// function calcYear1(birthYear) {
+//     return 2037 - birthYear
+// }
+// const outPut1 = calcYear1(1988);
+
+// const calcYear2 = function(birthYear) {
+//     return 2056 - birthYear
+// }
+// const outPut2 = calcYear2(1995);
+
+// const calcYear3 = birthYear => 2097 - birthYear;
+// const outPut3 = calcYear3(2011);
+// console.log(outPut1, outPut2, outPut3);
+
+// const yearUntillRetirement = (dateBorn, firstName) => {
+//     const age = 2086 - dateBorn;
+//     const ready = 65 - age;
+//     return `${firstName} is ${age} years before retirement`
+// }
+
+// const calcYear4 = yearUntillRetirement(2058, 'Sergio');
+// console.log(calcYear4);
+
+
+
+// //1 type
+// function readyToGo(myBirth) {
+//     let myAge = 2021 - myBirth;
+//     let myPension = 65 - myAge;
+//     return myPension; 
+// } 
+
+// let readyToSee = readyToGo(1988);
+// console.log(`I have ${readyToSee} years before retirement`);
+
+// //2nd type
+// let readyToSee2 = function readyToGo(myBirth) {
+//     myAge = 2021 - myBirth;
+//     myPension = 65 - myAge;
+//     return myPension; 
+// }
+
+// readyToSee2 = readyToGo(1990);
+// console.log(`I have ${readyToSee2} years before retirement`);
+
+// //3rd type
+// const readyToSee3 = myBirth => 2056 - myBirth
+// console.log(`I will have ${readyToSee3(1995)} years old in 2056`);
+
+
+// const cutPieces = function(fruit) {
+//     return fruit * 4
+// }
+
+// const fruitProcessor = function makeJuice(apples, oranges) {
+//     const results1 = cutPieces(apples)
+//     const results2 = cutPieces(oranges)
+//     const results3 = results1 + results2
+//     return results3
+// }
+
+// console.log(fruitProcessor(2,3))
+
+
+const calcAverage = (a,b,c) => (a + b + c)/3;
+const dolphine1 = calcAverage(44, 23, 71);
+const dolphine2 = calcAverage(85, 54, 41);
+const koalas1 = calcAverage(65, 54, 49);
+const koalas2 = calcAverage(23, 34, 27);
+
+console.log(dolphine1)
+console.log(dolphine2)
+console.log(koalas1)
+console.log(koalas2)
+
+const checkWinner = function(avgDolphine, avgKoalas) { 
+    if (avgDolphine >= 2*avgKoalas) {
+        console.log(`Dolphin is winner because dolphins have ${avgDolphine} score than ${avgKoalas}`)
+    } else if (avgKoalas >= 2*avgDolphine)  {
+        console.log(`Koalas is winner because dolphins have ${avgKoalas} score than ${avgDolphin}`)
+    } else {
+        console.log(`Apparantly, it's draw`)
+    }
+};
+
+checkWinner(dolphine1, koalas1);
+checkWinner(dolphine2, koalas2);
+
 function fruitMachine(apples, oranges) {
     const juice = `I have ${apples} apples and ${oranges} oranges`;
     return juice;
