@@ -354,5 +354,4 @@ const checkWinner = function(avgDolphine, avgKoalas) {
 };
 
 checkWinner(dolphine1, koalas1);
-
 checkWinner(dolphine2, koalas2);
