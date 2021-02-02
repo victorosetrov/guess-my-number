@@ -332,26 +332,124 @@
 
 
 
-const calcAverage = (a,b,c) => (a + b + c)/3;
-const dolphine1 = calcAverage(44, 23, 71);
-const dolphine2 = calcAverage(85, 54, 41);
-const koalas1 = calcAverage(65, 54, 49);
-const koalas2 = calcAverage(23, 34, 27);
+// const calcAverage = (a,b,c) => (a + b + c)/3;
+// const dolphine1 = calcAverage(44, 23, 71);
+// const dolphine2 = calcAverage(85, 54, 41);
+// const koalas1 = calcAverage(65, 54, 49);
+// const koalas2 = calcAverage(23, 34, 27);
 
-console.log(dolphine1)
-console.log(dolphine2)
-console.log(koalas1)
-console.log(koalas2)
+// console.log(dolphine1)
+// console.log(dolphine2)
+// console.log(koalas1)
+// console.log(koalas2)
 
-const checkWinner = function(avgDolphine, avgKoalas) { 
-    if (avgDolphine >= 2*avgKoalas) {
-        console.log(`Dolphin is winner because dolphins have ${avgDolphine} score than ${avgKoalas}`)
-    } else if (avgKoalas >= 2*avgDolphine)  {
-        console.log(`Koalas is winner because dolphins have ${avgKoalas} score than ${avgDolphin}`)
-    } else {
-        console.log(`Apparantly, it's draw`)
-    }
-};
+// const checkWinner = function(avgDolphine, avgKoalas) { 
+//     if (avgDolphine >= 2*avgKoalas) {
+//         console.log(`Dolphin is winner because dolphins have ${avgDolphine} score than ${avgKoalas}`)
+//     } else if (avgKoalas >= 2*avgDolphine)  {
+//         console.log(`Koalas is winner because dolphins have ${avgKoalas} score than ${avgDolphin}`)
+//     } else {
+//         console.log(`Apparantly, it's draw`)
+//     }
+// };
 
-checkWinner(dolphine1, koalas1);
-checkWinner(dolphine2, koalas2);
+// checkWinner(dolphine1, koalas1);
+// checkWinner(dolphine2, koalas2);
+
+// function logger() {
+//     console.log('My name is Viktor')
+// } 
+
+// logger()
+// logger()
+// logger()
+// logger()
+// logger()
+
+//1 Declarative functions
+
+// function smallPiece(fruit) {
+//     return fruit * 4;
+// }
+
+// function fruitMachine(apples, oranges) {
+//     const applePieces = smallPiece(apples)
+//     const orangePiece = smallPiece(oranges)
+//     const juice = (`I have ${applePieces} pieces apples and ${orangePiece} pieces oranges`)
+//     return juice
+// };
+// const fruitProcessor1 = fruitMachine(6, 7);
+// console.log(fruitProcessor1)
+
+
+// function calcAge1(dateBirth) {
+//     const realAge = 2021 - dateBirth;
+//     const retirement = 65 - realAge;
+//     return retirement;
+// }
+// const outputAge1 = calcAge1(1988);
+// console.log(outputAge1);
+
+//2 Expression functions
+// const outputFruit = function fruitMachine(apples, oranges) {
+//     const juice = (`I have ${apples} apples and ${oranges} oranges`)
+//     return juice
+// }; 
+// console.log(outputFruit(5, 8));
+
+
+
+// const outputAge2 = function (dateBirth) {
+//     const realAge = 2021 - dateBirth;
+//     const retirement = 65 - realAge;
+//     return retirement;
+// }
+// const calcAge2 = outputAge2(1990)
+// console.log(calcAge2);
+
+
+//3 Array functions
+// const outputFruit2 = (apples, oranges) => (`I have ${apples} apples and ${oranges} oranges`);
+// console.log(outputFruit2(4, 9));
+
+
+
+// const outputAge3 = (dateBirth, nameMy) => {
+//     const realAge = 2021 - dateBirth;
+//     const retirement = 65 - realAge;
+//     return `He has ${retirement} years before and his name is ${nameMy}`;
+// }
+// const calcAge3 = outputAge3(1995, 'Viktor')
+// console.log(calcAge3); 
+
+// challenge
+
+//1) 
+// const calcAverage = (a,b,c) => (a + b + c)/3
+
+// //const avgDolphins = calcAverage(44,23,71)
+// const avgDolphins = calcAverage(85,54,41)
+// //const avgKoalas = calcAverage(65,54,49)
+// const avgKoalas = calcAverage(23,34,27)
+
+// const checkWinner = (avgDolphins, avgKoalas) => {
+//     if (avgDolphins >= 2 * avgKoalas) {
+//         return(`Dolphins winner with ${avgDolphins} Vs Koalas with ${avgKoalas}`)
+//     } else if (avgKoalas >= 2 * avgDolphins) {
+//         return(`Koalas winner with ${avgKoalas} Vs Dolphins with ${avgDolphins}`)
+//     } else {
+//         return(`It's draw, bro`)
+//     }
+// }
+
+// console.log(checkWinner(avgDolphins, avgKoalas));
+
+const calcTip = (bill)  => { return bill >= 50 && bill <= 300 ? bill * 0.15 :  bill * 0.2 }
+
+
+const bills = [125, 555, 44] 
+const tip = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
+const totals = [bills[0] + tip[0], bills[1] + tip[1], bills[2] + tip[2]]
+
+console.log(bills, tip, totals)
+
