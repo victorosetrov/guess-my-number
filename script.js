@@ -444,12 +444,49 @@
 
 // console.log(checkWinner(avgDolphins, avgKoalas));
 
-const calcTip = (bill)  => { return bill >= 50 && bill <= 300 ? bill * 0.15 :  bill * 0.2 }
+// const calcTip = (bill)  => { return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2 }
 
 
-const bills = [125, 555, 44] 
-const tip = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
-const totals = [bills[0] + tip[0], bills[1] + tip[1], bills[2] + tip[2]]
+// const bills = [125, 555, 44] 
+// const tip = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
+// const totals = [bills[0] + tip[0], bills[1] + tip[1], bills[2] + tip[2]]
 
-console.log(bills, tip, totals)
+// console.log(bills, tip, totals)
 
+// const calcTip = (bill) =>  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// console.log(calcTip(125));
+
+// const bill = [125, 555, 44]
+// const tips = [calcTip(bill[0]), calcTip(bill[1]), calcTip(bill[2])]
+// const totals = [bill[0] + calcTip(bill[0]), bill[1] + calcTip(bill[1]), bill[2] + calcTip(bill[2])]
+// console.log(bill, tips, totals) 
+
+const mark = {
+    name: 'Mark Miller', 
+    weight: 78,
+    height: 1.69,
+    calcBMI: function() {
+        return this.weight / this.height ** 2
+    }
+}
+
+console.log(mark.calcBMI());
+
+
+const john = {
+    name: 'John Smith',
+    weight: 92,
+    height: 1.95,
+    calcBMI: function() {
+        return this.weight / this.height ** 2
+    }
+
+}
+
+const outPut55 = function() {
+    return mark.calcBMI < john.calcBMI ?
+    console.log(`${john.name}  BMI ${john.calcBMI()} is lower than ${mark.name}'s ${mark.calcBMI()}`) :
+    console.log(`${john.name} BMI ${john.calcBMI()} is higher than ${mark.name}'s ${mark.calcBMI()}`) 
+}
+
+console.log(outPut55())
