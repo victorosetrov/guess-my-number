@@ -331,7 +331,6 @@
 
 
 
-
 // const calcAverage = (a,b,c) => (a + b + c)/3;
 // const dolphine1 = calcAverage(44, 23, 71);
 // const dolphine2 = calcAverage(85, 54, 41);
@@ -453,6 +452,7 @@
 
 // console.log(bills, tip, totals)
 
+
 // const calcTip = (bill) =>  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 // console.log(calcTip(125));
 
@@ -528,3 +528,64 @@ const calcAverage = function (arr) {
 console.log(calcAverage(totals));
 console.log(calcAverage(tips));
 console.log(calcAverage(bill));
+=======
+console.log(outPut55())
+=======
+const calcAverage = (a,b,c) => (a + b + c)/3;
+const dolphine1 = calcAverage(44, 23, 71);
+const dolphine2 = calcAverage(85, 54, 41);
+const koalas1 = calcAverage(65, 54, 49);
+const koalas2 = calcAverage(23, 34, 27);
+
+console.log(dolphine1)
+console.log(dolphine2)
+console.log(koalas1)
+console.log(koalas2)
+
+const checkWinner = function(avgDolphine, avgKoalas) { 
+    if (avgDolphine >= 2*avgKoalas) {
+        console.log(`Dolphin is winner because dolphins have ${avgDolphine} score than ${avgKoalas}`)
+    } else if (avgKoalas >= 2*avgDolphine)  {
+        console.log(`Koalas is winner because dolphins have ${avgKoalas} score than ${avgDolphin}`)
+    } else {
+        console.log(`Apparantly, it's draw`)
+    }
+};
+
+checkWinner(dolphine1, koalas1);
+checkWinner(dolphine2, koalas2);
+
+function fruitMachine(apples, oranges) {
+    const juice = `I have ${apples} apples and ${oranges} oranges`;
+    return juice;
+};
+
+const appleJuice = fruitMachine(5, 7);
+console.log(appleJuice);
+
+const appleOrangeJuice = fruitMachine(2, 4);
+console.log(appleOrangeJuice);
+
+function calcYear1(birthYear) {
+    return 2037 - birthYear
+}
+const outPut1 = calcYear1(1988);
+
+const calcYear2 = function(birthYear) {
+    return 2056 - birthYear
+}
+const outPut2 = calcYear2(1995);
+
+const calcYear3 = birthYear => 2097 - birthYear;
+const outPut3 = calcYear3(2011);
+console.log(outPut1, outPut2, outPut3);
+
+const yearUntillRetirement = (dateBorn, firstName) => {
+    const age = 2086 - dateBorn;
+    const ready = 65 - age;
+    return `${firstName} is ${age} years before retirement`
+}
+
+const calcYear4 = yearUntillRetirement(2058, 'Sergio');
+console.log(calcYear4);
+
