@@ -461,34 +461,74 @@
 // const totals = [bill[0] + calcTip(bill[0]), bill[1] + calcTip(bill[1]), bill[2] + calcTip(bill[2])]
 // console.log(bill, tips, totals) 
 
-const mark = {
-    name: 'Mark Miller', 
-    weight: 78,
-    height: 1.69,
-    calcBMI: function() {
-        return this.weight / this.height ** 2
+// const mark = {
+//     name: 'Mark Miller', 
+//     weight: 78,
+//     height: 1.69,
+//     calcBMI: function() {
+//         return this.weight / this.height ** 2
+//     }
+// }
+
+// console.log(mark.calcBMI());
+
+
+// const john = {
+//     name: 'John Smith',
+//     weight: 92,
+//     height: 1.95,
+//     calcBMI: function() {
+//         return this.weight / this.height ** 2
+//     }
+
+// }
+
+// const outPut55 = function() {
+//     return mark.calcBMI < john.calcBMI ?
+//     console.log(`${john.name}  BMI ${john.calcBMI()} is lower than ${mark.name}'s ${mark.calcBMI()}`) :
+//     console.log(`${john.name} BMI ${john.calcBMI()} is higher than ${mark.name}'s ${mark.calcBMI()}`) 
+// }
+
+// console.log(outPut55())
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`I like coding ${rep} times`);
+// }
+
+// let rep = 1
+// while (rep <= 10) {
+//     console.log(`I like football ⚽️ ${rep} times`);
+//     rep++;
+// }
+
+const calcTip = (bill) =>  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+const bill = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// const tips = [calcTip(bill[0]), calcTip(bill[1]), calcTip(bill[2])]
+// const totals = [bill[0] + calcTip(bill[0]), bill[1] + calcTip(bill[1]), bill[2] + calcTip(bill[2]), bill[3] + calcTip(bill[3]), bill[4] + calcTip(bill[4]), bill[5] + calcTip(bill[5]), bill[6] + calcTip(bill[6]), bill[7] + calcTip(bill[7]), bill[8] + calcTip(bill[8]), bill[9] + calcTip(bill[9])]
+
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bill.length; i++) {
+    const tip = calcTip(bill[i]);
+    tips.push(tip);
+    totals.push(tip + bill[i]);
+}
+
+console.log(bill, tips, totals)
+
+const calcAverage = function (arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
     }
+    return sum/ arr.length
 }
 
-console.log(mark.calcBMI());
-
-
-const john = {
-    name: 'John Smith',
-    weight: 92,
-    height: 1.95,
-    calcBMI: function() {
-        return this.weight / this.height ** 2
-    }
-
-}
-
-const outPut55 = function() {
-    return mark.calcBMI < john.calcBMI ?
-    console.log(`${john.name}  BMI ${john.calcBMI()} is lower than ${mark.name}'s ${mark.calcBMI()}`) :
-    console.log(`${john.name} BMI ${john.calcBMI()} is higher than ${mark.name}'s ${mark.calcBMI()}`) 
-}
-
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));
+console.log(calcAverage(bill));
+=======
 console.log(outPut55())
 =======
 const calcAverage = (a,b,c) => (a + b + c)/3;
