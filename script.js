@@ -1826,23 +1826,88 @@ GOOD LUCK 😀
 // console.log(cAvg(tips));
 // console.log(cAvg(totals));
 
-const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+// const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
-for (let i = 0; i < temperatures.length; i++) {
-  if (typeof temperatures[i] === 'string') continue;
-  console.log(temperatures[i], typeof temperatures[i]);
-  //types[i] = typeof vArray[i];
-  //types.push(typeof vArray[i]);
-}
+// for (let i = 0; i < temperatures.length; i++) {
+//   if (typeof temperatures[i] === 'string') continue;
+//   console.log(temperatures[i], typeof temperatures[i]);
+//   //types[i] = typeof vArray[i];
+//   //types.push(typeof vArray[i]);
+// }
 
-const calcTempApmplitude = function (temperatures) {
-  let max = temperatures[0];
-  let min = temperatures[0];
-  for (let i = 0; i < temperatures.length; ++i) {
-    const curTemp = temperatures[i];
-    if (curTemp > max) max = curTemp;
-    if (curTemp < min) min = curTemp;
+// const calcTempApmplitude = function (temperatures) {
+//   let max = temperatures[0];
+//   let min = temperatures[0];
+//   for (let i = 0; i < temperatures.length; ++i) {
+//     const curTemp = temperatures[i];
+//     if (typeof curTemp !== 'number') continue;
+//     if (curTemp > max) max = curTemp;
+//     if (curTemp < min) min = curTemp;
+//   }
+//   console.log(max, min);
+//   return max - min;
+// };
+
+// const amplitude = calcTempApmplitude(temperatures);
+// console.log(amplitude);
+
+// const mKelvin = function () {
+//   const measurement = {
+//     type: 'temp',
+//     unit: 'celsius',
+//     value: prompt('Degree celsius: '),
+//   };
+//   const kelvin = Number(measurement.value) + 273;
+//   return kelvin;
+// };
+
+// console.log(mKelvin());
+
+// const temp = [12, 5, -5, 0, 4];
+
+// const printForecast = function (arr) {
+//   let str = '';
+//   for (let i = 0; i < temp.length; i++) {
+//     str += `...${arr[i]}c in ${i + 1} days...`;
+//   }
+//   console.log(str);
+// };
+
+// console.log(printForecast(temp));
+
+// document.querySelector('.message').textContent;
+// document.querySelector('.number').textContent = 13;
+// document.querySelector('.score').textContent = 20;
+// document.querySelector('.guess').value = 7;
+
+const secretNumber = Math.trunc(Math.random() * 20) + 1;
+document.querySelector('.number').textContent = secretNumber;
+let score = 20;
+
+document.querySelector('.check').addEventListener('click', function () {
+  const guess = Number(document.querySelector('.guess').value);
+  if (!guess) {
+    document.querySelector('.message').textContent = '🐷 Try again, buddy!';
+  } else if (guess === secretNumber) {
+    document.querySelector('.message').textContent = '🥳 You are winner!';
+  } else if (guess > secretNumber) {
+    if (score > 1) {
+      document.querySelector('.message').textContent = '🔥 Too hot, lower pls!';
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = '😭 Game over';
+      document.querySelector('.score').textContent = 0;
+    }
+  } else {
+    if (score > 1) {
+      document.querySelector('.message').textContent =
+        '🥶 Too cold, higher pls!';
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = '😭 Game over';
+      document.querySelector('.score').textContent = 0;
+    }
   }
-  console.log(max, min);
-};
-calcTempApmplitude([3, 4, 7]);
+});
