@@ -1880,34 +1880,189 @@ GOOD LUCK 😀
 // document.querySelector('.score').textContent = 20;
 // document.querySelector('.guess').value = 7;
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
-document.querySelector('.number').textContent = secretNumber;
+// const secretNumber = Math.trunc(Math.random() * 20) + 1;
+// document.querySelector('.number').textContent = secretNumber;
+// let score = 20;
+
+// document.querySelector('.check').addEventListener('click', function () {
+//   const guess = Number(document.querySelector('.guess').value);
+//   if (!guess) {
+//     document.querySelector('.message').textContent = '🐷 Try again, buddy!';
+//   } else if (guess === secretNumber) {
+//     document.querySelector('.message').textContent = '🥳 You are winner!';
+//   } else if (guess > secretNumber) {
+//     if (score > 1) {
+//       document.querySelector('.message').textContent = '🔥 Too hot, lower pls!';
+//       score--;
+//       document.querySelector('.score').textContent = score;
+//     } else {
+//       document.querySelector('.message').textContent = '😭 Game over';
+//       document.querySelector('.score').textContent = 0;
+//     }
+//   } else {
+//     if (score > 1) {
+//       document.querySelector('.message').textContent =
+//         '🥶 Too cold, higher pls!';
+//       score--;
+//       document.querySelector('.score').textContent = score;
+//     } else {
+//       document.querySelector('.message').textContent = '😭 Game over';
+//       document.querySelector('.score').textContent = 0;
+//     }
+//   }
+// });
+
+// Answer 1
+
+// function formatQs() {
+//   var output = {};
+//   //var qs = document.location.search.substring(1);
+//   var qs = 'a=1&b=2&c=3&d=4';
+//   qs = qs.split('&');
+//   for (var i = 0; i < qs.length; i++) {
+//     var tokens = qs[i].split('=');
+//     output[tokens[0].toLowerCase()] = tokens[1];
+//   }
+//   return output;
+// }
+// console.log(formatQs());
+
+// // Answer 2
+
+// function formatQs() {
+//   var output = {};
+//   //var qs = document.location.search.substring(1);
+//   var qs =
+//     'https://example.com?utm_source=news4&utm_medium=email&utm_campaign=spring-summer';
+//   qs = qs.split('&');
+
+//   for (var i = 0; i < qs.length; i++) {
+//     var tokens = qs[i].split('=');
+//     output[tokens[0].toLowerCase()] = tokens[1];
+//   }
+
+//   return output;
+// }
+
+// // Answer 3
+
+// const analytics = {
+//   track(label, obj) {
+//     return obj;
+//   },
+// };
+
+// function formatQs() {
+//   const SUPPORTED_UTM = ['content', 'medium', 'name', 'term', 'source'];
+//   const output = {};
+//   //let qs = document.location.search.substring(1); // Remove leading ?
+//   let qs =
+//     '?utm_source=google&utm_medium=medium&utm_term=keyword&utm_content=some%20content&utm_campaign=some%20campaign&utm_test=other%20value&utm_name=forest';
+//   if (qs === '') return "You passed in an empty string ''";
+
+//   qs = qs.split('&');
+
+//   for (let i = 0; i < qs.length; i++) {
+//     // destructure out the keys and values
+//     const [key, value] = qs[i].split('=');
+//     let param;
+
+//     if (key.startsWith('utm_')) {
+//       param = key.slice(4);
+
+//       //a check for duplicate name params
+//       if (param in output) {
+//         console.log('param has a duplicate: ', param);
+//         continue;
+//       }
+
+//       // Segment products replace the tradional campaign param with name.
+//       if (param === 'campaign') param = 'name';
+
+//       // Check for the utm requested for by the question
+//       if (!SUPPORTED_UTM.includes(param)) continue;
+
+//       // decode chars
+//       const decodeUri = decodeURIComponent(value.replace(/\+/g, ' '));
+
+//       output[param.toLowerCase()] = decodeUri;
+//     }
+//   }
+//   return analytics.track('User Referred', output);
+// }
+
+// console.log(formatQs());
+
+// document.querySelector('.message').textContent;
+// document.querySelector('.number').textContent = 13;
+// document.querySelector('.score').textContent = 20;
+// document.querySelector('.guess').value = 7;
+
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
+let highScore = 0;
+
+const displayMessage = function (message) {
+  document.querySelector('.message').textContent = message;
+};
+
+const displayScore = function (score) {
+  document.querySelector('.score').textContent = score;
+};
+
+const displayNumber = function (number) {
+  document.querySelector('.number').textContent = number;
+};
+
+const displayBackground = function (body) {
+  document.querySelector('body').style.backgroundColor = body;
+};
+
+const displayWidth = function (width) {
+  document.querySelector('.number').style.width = width;
+};
 
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
+
+  // When no input
   if (!guess) {
-    document.querySelector('.message').textContent = '🐷 Try again, buddy!';
+    displayMessage('🐷 Try again, buddy!');
+
+    // When player wins
   } else if (guess === secretNumber) {
-    document.querySelector('.message').textContent = '🥳 You are winner!';
-  } else if (guess > secretNumber) {
-    if (score > 1) {
-      document.querySelector('.message').textContent = '🔥 Too hot, lower pls!';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = '😭 Game over';
-      document.querySelector('.score').textContent = 0;
+    displayMessage('🥳 You are winner!');
+    displayNumber(secretNumber);
+    displayBackground('#60b347');
+    displayWidth('30rem');
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector('.highscore').textContent = highScore;
     }
-  } else {
+  } else if (guess !== secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent =
-        '🥶 Too cold, higher pls!';
+      displayMessage(
+        guess > secretNumber
+          ? '🔥 Too hot, colder please'
+          : '🥶 Too cold, hotter pls!'
+      );
       score--;
-      document.querySelector('.score').textContent = score;
+      displayScore(score);
     } else {
-      document.querySelector('.message').textContent = '😭 Game over';
-      document.querySelector('.score').textContent = 0;
+      displayMessage('😭 Game over');
+      displayScore(0);
+      displayBackground('#8b0000');
     }
   }
+});
+
+document.querySelector('.again').addEventListener('click', function () {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  displayMessage('Start guessing...');
+  displayScore(score);
+  displayNumber('?');
+  document.querySelector('.guess').value = '';
+  displayBackground('#222');
+  displayWidth('15rem');
 });
